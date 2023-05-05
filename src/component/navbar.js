@@ -8,7 +8,7 @@ class NoLoginHeader extends HTMLElement {
                 <p>Cognition</p>
             </div>
             <ul class="flex">
-                <li><a href="./login.html">Login</a></li>
+                <li><a href="./login.html">Dashboard</a></li>
             </ul>
         </header>
         </div>

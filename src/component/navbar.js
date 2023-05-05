@@ -1,7 +1,8 @@
 class NoLoginHeader extends HTMLElement {
     connectedCallback(){
         this.innerHTML = `
-        <nav class="hero__container">
+        <nav class="nav">
+        <div class="hero__container">
         <header class="header">
             <div>
                 <p>Cognition</p>
@@ -10,6 +11,7 @@ class NoLoginHeader extends HTMLElement {
                 <li><a href="./login.html">Login</a></li>
             </ul>
         </header>
+        </div>
     </nav>
         `
     }
@@ -18,7 +20,7 @@ class NoLoginHeader extends HTMLElement {
 class LoginHeader extends HTMLElement {
     connectedCallback(){
         this.innerHTML = `
-        <nav class="hero__container">
+        <nav class="navv2 hero__container">
         <header class="header">
             <div>
                 <p>Cognition</p>

@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Montserrat:wght@900&display=swap");
 ::-moz-selection {
   color: white;
   background: #343a40;
@@ -15,9 +16,27 @@ body {
   padding: 0;
 }
 
-nav {
+.media-body {
+  overflow-y: hidden;
+}
+
+.nav {
   width: 100%;
   padding-top: 40px;
+  background: linear-gradient(to right, #000, #343434);
+  color: #fff;
+  font-weight: 900;
+}
+
+.navv2 {
+  width: 100%;
+  padding-top: 40px;
+  font-weight: 900;
+}
+
+.main-vsd {
+  height: 100vh;
+  overflow: auto;
 }
 
 .header {
@@ -25,10 +44,15 @@ nav {
   justify-content: space-between;
 }
 
+.work-flex {
+  display: flex;
+  justify-content: space-between;
+}
+
 .text-header {
-  font-size: 64px;
+  font-size: 70px;
   font-weight: 800;
-  font-family: "Bruno Ace SC", cursive;
+  font-family: "Montserrat", sans-serif;
 }
 
 .flex {
@@ -64,7 +88,7 @@ ul {
 }
 
 .m-hd {
-  font-size: 20px;
+  font-size: 26px;
   font-weight: 700;
   margin-top: 30px;
 }
@@ -75,10 +99,6 @@ ul {
 
 .font-bolder {
   font-weight: 900;
-}
-
-.sub-text-header {
-  color: #273339;
 }
 
 .svg-sec {
@@ -172,4 +192,11 @@ footer {
 
 .footer-vone {
   width: 30%;
+}
+
+.signup-btn {
+  background: #47baef;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
 }/*# sourceMappingURL=style.css.map */

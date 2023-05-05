@@ -3,50 +3,68 @@ pragma solidity ^0.8.0;
 
 contract Image {
     string public ipfsId;
-    address[] public addressAccepted;
-    address[] public addressRejected;
+    address[] public acceptedAddresses;
+    address[] public rejectedAddresses;
 
     function addToAccepted(address newAddress) public {
-        require(isAccepted(newAddress) != -1, "Address already accepted");
+        require(!isAccepted(newAddress), "You have already voted");
 
-        int rej = isRejected(newAddress);
-
-        if (rej != -1){
-            delete addressRejected[uint(rej)];
+        // If the address is in the rejectedAddresses array, remove it from there
+        if (isRejected(newAddress)) {
+            removeFromRejected(newAddress);
         }
 
-        addressAccepted.push(newAddress);
-
+        acceptedAddresses.push(newAddress);
     }
 
     function addToRejected(address newAddress) public {
-        require(isRejected(newAddress) != -1, "Address already rejected");
+        require(!isRejected(newAddress), "Address already rejected");
 
-        int apt = isAccepted(newAddress);
-
-        if (apt != -1){
-            delete addressAccepted[uint(apt)];
+        // If the address is in the acceptedAddresses array, remove it from there
+        if (isAccepted(newAddress)) {
+            removeFromAccepted(newAddress);
         }
-        addressRejected.push(newAddress);
+
+        rejectedAddresses.push(newAddress);
     }
 
-    function isAccepted(address queryAddress) public view returns (int) {
-        for (uint i = 0; i < addressAccepted.length; i++) {
-            if (addressAccepted[i] == queryAddress) {
-                return int(i);
+    function removeFromAccepted(address addressToRemove) public {
+        for (uint i = 0; i < acceptedAddresses.length; i++) {
+            if (acceptedAddresses[i] == addressToRemove) {
+                // If the address is found, remove it from the array by swapping it with the last element
+                acceptedAddresses[i] = acceptedAddresses[acceptedAddresses.length - 1];
+                acceptedAddresses.pop();
+                return;
             }
         }
-        return -1;
     }
 
-    function isRejected(address queryAddress) public view returns (int) {
-        for (uint i = 0; i < addressRejected.length; i++) {
-            if (addressRejected[i] == queryAddress) {
-                return int(i);
+    function removeFromRejected(address addressToRemove) public {
+        for (uint i = 0; i < rejectedAddresses.length; i++) {
+            if (rejectedAddresses[i] == addressToRemove) {
+                // If the address is found, remove it from the array by swapping it with the last element
+                rejectedAddresses[i] = rejectedAddresses[rejectedAddresses.length - 1];
+                rejectedAddresses.pop();
+                return;
             }
         }
-        return -1;
     }
 
+    function isAccepted(address queryAddress) public view returns (bool) {
+        for (uint i = 0; i < acceptedAddresses.length; i++) {
+            if (acceptedAddresses[i] == queryAddress) {
+                return true;
+            }
+        }
+        return false;
+    }
 
+    function isRejected(address queryAddress) public view returns (bool) {
+        for (uint i = 0; i < rejectedAddresses.length; i++) {
+            if (rejectedAddresses[i] == queryAddress) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&display=swap");
+::-moz-selection {
+  color: white;
+  background: #343a40;
+}
+::selection {
+  color: white;
+  background: #343a40;
+}
+
+*,
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  width: 100%;
+  padding-top: 40px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.text-header {
+  font-size: 64px;
+  font-weight: 800;
+  font-family: "Bruno Ace SC", cursive;
+}
+
+.flex {
+  display: flex;
+}
+
+ul {
+  list-style: none;
+}
+
+.hero__container {
+  max-width: 1375px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.odd-background {
+  width: 100%;
+  height: 110vh;
+  background: linear-gradient(to right, #000, #343434);
+}
+
+.font-bolder {
+  font-weight: 900;
+}
+
+.sub-text-header {
+  color: #273339;
+}
+
+.svg-sec {
+  height: 100%;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.K_bC {
+  position: absolute;
+}
+
+.login-section-img img {
+  width: 100%;
+  height: 100vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.login-section-main {
+  width: 26%;
+  margin: 40px;
+  margin-top: 380px;
+}
+
+input {
+  border: 1px solid #ccc;
+  text-decoration: none;
+  outline: hidden;
+  width: 100%;
+  height: 36px;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  background: #47baef;
+  font-weight: 700;
+  color: #fff;
+  transition: background 700ms;
+}
+
+.submit-btn:hover {
+  background: #3392be;
+}
+
+.post-image {
+  border-radius: 15px;
+}
+
+.border-line {
+  width: 100%;
+  height: 1px;
+  background: #273339;
+  opacity: 0.2;
+}
+
+.side-container {
+  width: 30%;
+  border-right: 1px solid #ccc;
+}
+
+.post-site .profile {
+  width: 80px;
+  height: 40px;
+  border-radius: 50%;
+}/*# sourceMappingURL=style.css.map */

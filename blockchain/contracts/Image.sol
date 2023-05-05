@@ -22,7 +22,7 @@ contract Image {
     }
 
     function addToRejected(address newAddress) public {
-        require(!isRejected(newAddress), "Address already rejected");
+        require(!isRejected(newAddress), "You have already voted");
       
         if (isAccepted(newAddress)) {
             removeFromAccepted(newAddress);

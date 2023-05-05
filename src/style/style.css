@@ -201,4 +201,32 @@ footer {
   color: #fff;
   font-size: 18px;
   font-weight: 700;
+}
+
+.profile-bac {
+  width: 100%;
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.profile-bac img {
+  width: 100%;
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  opacity: 0.6;
+}
+
+.profile-mn {
+  width: 50%;
+  align-items: center;
+}
+.profile-mn img {
+  position: relative;
+  top: -50px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }/*# sourceMappingURL=style.css.map */

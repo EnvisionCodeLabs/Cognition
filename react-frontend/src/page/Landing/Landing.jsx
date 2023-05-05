@@ -1,15 +1,27 @@
 import "./landing.css"
 import LoginHeader from "../../components/LoginHeader"
+import { useEffect, useState } from "react"
+import { useNavigate } from "react-router-dom";
 
+export default function Landing(){
 
-export default function Landing({ connect }){
+    const [account, setAccount] = useState(null);
+    const navigator = useNavigate()
+
+    const connect = async () => {
+        const { ethereum } = window
+
+        const accounts = await ethereum.request({method: "eth_requestAccounts"})
+        await setAccount(accounts[0])
+        navigator('/home')
+    }
+
     return  <>
+        <LoginHeader/>
 
-    <LoginHeader/>
+        <button onClick={connect}>Login</button>
 
-    <button onClick={connect}>Login</button>
-
-     <section class="odd-background">
+        <section class="odd-background">
             <div class="hero__container  pt-40">
                 <h1 class="text-header text-center">You know what the rock is cooking?</h1>
                 <p class="text-center text-base">rocky soup, get it hahaha bruh</p>
@@ -37,7 +49,6 @@ export default function Landing({ connect }){
             </div>
             
         </section>
-
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 110" class="K_bC"><path d="M 0 0 L 1920 0 L 960 110 Z" fill="#fff"></path></svg>
 
         <section class="odd-background">

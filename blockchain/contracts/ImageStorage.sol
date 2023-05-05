@@ -1,16 +1,15 @@
+// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
 
 import "./Image.sol";
 
 
-
 contract ImageStorage {
     Image[] public images;
 
     function addImage(string memory ipfsId) public {
-        Image newImage = new Image();
-        newImage.setIpfsId(ipfsId);
+        Image newImage = new Image(ipfsId);
         images.push(newImage);
     }
 

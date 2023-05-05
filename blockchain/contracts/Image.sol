@@ -1,9 +1,14 @@
+// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
 contract Image {
     string public ipfsId;
     address[] public acceptedAddresses;
     address[] public rejectedAddresses;
+
+    constructor(string memory _ipfsId) {
+        ipfsId = _ipfsId;
+    }
 
     function addToAccepted(address newAddress) public {
         require(!isAccepted(newAddress), "You have already voted");

@@ -34,7 +34,7 @@ async def upload_image(file: UploadFile = File(...), hash: str = None):
 
 
 @app.post('/compare')
-async def compare_image(file: UploadFile = File(...)) -> JSONResponse:
+async def compare_image(file: UploadFile = File(...)) -> bool:
     contents = await file.read()
     encoded = base64.b64encode(contents).decode('utf-8')
     decoded = base64.b64decode(encoded)
@@ -45,10 +45,21 @@ async def compare_image(file: UploadFile = File(...)) -> JSONResponse:
         'image': image_path
     }).with_limit(3)
 
-    res = ret.do()
+    res = ret.do()['data']['Get']['Images']
+
+    # return JSONResponse(res)
+
+    for img in res:
 
 
-    return JSONResponse(content=res)
+        if str(encoded) == str(img['image']):
+
+            return True
+
+        
+
+
+    return False
 
 
 

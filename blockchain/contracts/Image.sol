@@ -4,6 +4,7 @@ pragma solidity ^0.8.0;
 contract Image {
     string public ipfsId;
     string public fileName;
+    
     address[] public acceptedAddresses;
     address[] public rejectedAddresses;
 

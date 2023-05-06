@@ -7,30 +7,26 @@ contract Image {
     address[] public acceptedAddresses;
     address[] public rejectedAddresses;
 
+    event Accepted(address indexed voter);
+    event Rejected(address indexed voter);
+
     constructor(string memory _ipfsId, string memory _fileName) {
         ipfsId = _ipfsId;
         fileName = _fileName;
     }
 
-    function addToAccepted(address newAddress) public payable{
-        require(!isAccepted(newAddress), "You have already voted");
-
-        
-        if (isRejected(newAddress)) {
-            removeFromRejected(newAddress);
-        }
-
+    function addToAccepted(address newAddress) public {
+        require(!isAccepted(newAddress), "Already accepted");
+        require(!isRejected(newAddress), "Already rejected");
         acceptedAddresses.push(newAddress);
+        emit Accepted(newAddress);
     }
 
-    function addToRejected(address newAddress) public payable{
-        require(!isRejected(newAddress), "You have already voted");
-      
-        if (isAccepted(newAddress)) {
-            removeFromAccepted(newAddress);
-        }
-
+    function addToRejected(address newAddress) public {
+        require(!isRejected(newAddress), "Already rejected");
+        require(!isAccepted(newAddress), "Already accepted");
         rejectedAddresses.push(newAddress);
+        emit Rejected(newAddress);
     }
 
     function removeFromAccepted(address addressToRemove) public {
@@ -38,7 +34,7 @@ contract Image {
             if (acceptedAddresses[i] == addressToRemove) {
                 acceptedAddresses[i] = acceptedAddresses[acceptedAddresses.length - 1];
                 acceptedAddresses.pop();
-                return;
+                break;
             }
         }
     }
@@ -48,7 +44,7 @@ contract Image {
             if (rejectedAddresses[i] == addressToRemove) {
                 rejectedAddresses[i] = rejectedAddresses[rejectedAddresses.length - 1];
                 rejectedAddresses.pop();
-                return;
+                break;
             }
         }
     }

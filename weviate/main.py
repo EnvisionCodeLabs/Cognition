@@ -17,8 +17,8 @@ def info():
     
     return client.schema.get()
 
-@app.post("/convert_image/")
-async def convert_image(file: UploadFile = File(...), hash: str = None):
+@app.post("/upload/")
+async def upload_image(file: UploadFile = File(...), hash: str = None):
     contents = await file.read()
     encoded = base64.b64encode(contents)
     
@@ -29,6 +29,17 @@ async def convert_image(file: UploadFile = File(...), hash: str = None):
     
     return "The image has been created"
     
+@app.post('/')
+async def compare_image(file: UploadFile = File(...)):
+    
+    contents = await file.read()
+    encoded = base64.b64encode(contents).decode("utf-8")
+    
+    ret = await client.query.get("Images", ['image']).with_near_image({'image': encoded}).with_limit(3)
+    
+    res = ret.do()
+    
+    return 1
 
 
 if __name__ == "main.py":

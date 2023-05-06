@@ -4,7 +4,6 @@ Cognitive AI is a machine learning tool designed for blockchain technology to pr
 
 - What was your motivation? To prevent unauthorized use and distribution of copyrighted materials.
 - Why did you build this project? To provide a secure and transparent solution for copyright protection.
-- What problem does it solve? Ensuring that copyrighted content is used and distributed legally and transparently.
 - What did you learn? How to integrate machine learning and blockchain technology for copyright enforcement.
 
 ## Table of Contents

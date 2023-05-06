@@ -62,19 +62,9 @@ async def compare_image(file: UploadFile = File(...)) -> bool:
 
     res = ret.do()['data']['Get']['Images']
 
-    # return JSONResponse(res)
+    return JSONResponse(res)
 
-    for img in res:
-
-
-        if str(encoded) == str(img['image']):
-
-            return True
-
-        
-
-
-    return False
+ 
 
 
 

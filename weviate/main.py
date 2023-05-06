@@ -1,6 +1,5 @@
 import weaviate
 from fastapi import FastAPI, File, UploadFile
-from typing import List
 import base64
 from fastapi.responses import JSONResponse
 import tempfile

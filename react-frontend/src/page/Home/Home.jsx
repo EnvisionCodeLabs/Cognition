@@ -3,7 +3,7 @@ import "./home.css"
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom";
 import Web3 from 'web3/dist/web3.min.js'
-import { imageStorageToken, imageStorageAbi } from '../../contracts/imageStorage';
+import { allImageAbi, imageTokenAddress as ITA } from '../../contracts/allInOneImage';
 import { imageAbi, imageTokenAddress } from '../../contracts/image'
 import { IpfsImage } from 'react-ipfs-image';
 
@@ -23,19 +23,11 @@ export default function Home(){
 
                 const web3 = new Web3(Web3.givenProvider)
 
-                const contract = new web3.eth.Contract(imageStorageAbi, imageStorageToken);
+                const contract = new web3.eth.Contract(allImageAbi, ITA);
 
-                const images = await contract.methods.getImages().call()
+                const images = await contract.methods.currentCount().call()
 
-                for (const image of await images){
-                    let imageContract = new web3.eth.Contract(imageAbi, image)
-                    let ipfs = await imageContract.methods.ipfsId().call()
-                    let name = await imageContract.methods.fileName().call()
-
-                    console.log(name)
-                    await setPosts([...posts, { ipfs : ipfs, name: name}])
-
-                }
+                
 
                 console.log(posts)
 

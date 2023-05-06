@@ -5,7 +5,7 @@ import {useDropzone} from 'react-dropzone';
 import { useNavigate } from "react-router-dom";
 import { Web3Storage } from 'web3.storage'
 import Web3 from 'web3/dist/web3.min.js'
-import { imageStorageToken, imageStorageAbi } from '../../contracts/imageStorage';
+import { imageTokenAddress, allImageAbi } from '../../contracts/allInOneImage';
 import Swal from 'sweetalert2'
 
 const thumbsContainer = {
@@ -68,16 +68,17 @@ function Create() {
     const submit =async  (e) => {
         e.preventDefault()
 
-        if (file && client){
+        if (file && client && accounts){
             const res = await client.put(file)
             
             const web3 = new Web3(Web3.givenProvider)
 
-            const contract = new web3.eth.Contract(imageStorageAbi, imageStorageToken);
-            const gas = await contract.methods.addImage(await res, encodeURI(file.name)).estimateGas({ from: accounts });
-            await contract.methods.addImage(await res, file.name).send({
-                from: accounts,
-                gas,
+            const contract = new web3.eth.Contract(allImageAbi, imageTokenAddress);
+
+            console.log(res, file[0].name, accounts)
+            
+            await contract.methods.addImage( res, file[0].name, true).send({
+                from: accounts
             });
             Swal.fire({
               icon: 'success',

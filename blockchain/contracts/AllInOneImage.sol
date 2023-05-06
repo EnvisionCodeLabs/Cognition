@@ -41,7 +41,7 @@ contract AllInOneImage{
             emit VoteStarted(_ipfs, fileName);
         }
 
-        
+        currentCount++;
 
     }
 

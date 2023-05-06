@@ -41,9 +41,6 @@ export default function Home(){
 
                 
             }
-        }).catch(err => {
-            console.log(err)
-            navigator('/')
         })
 
        
@@ -66,10 +63,10 @@ export default function Home(){
                     <i class="fa-solid fa-pen  text-[#273339] text-xl"></i>
                     <p class="font-bold text-[#273339] text-xl cursor-pointer" onClick={() => navigator('/create')}>Create</p>
                 </div>
-                <div class="px-6 py-8 flex gap-2">
+                {/* <div class="px-6 py-8 flex gap-2">
                     <i class="fa-solid fa-user  text-[#273339] text-xl"></i>
                     <p class="font-bold text-[#273339] text-xl">Profile</p>
-                </div>
+                </div> */}
             </div>
 
             <div class="mt-8">

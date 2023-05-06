@@ -5,7 +5,7 @@ export default function LoginHeader({ connect }) {
         <div class="hero__container">
         <header class="header">
             <div>
-                <img src="../lib/cogAI.png" alt="" className="logo-img-cog"/>
+                <img src="../lib/tabicon.png" alt="" className="logo-img-cog"/>
             </div>
             <ul class="flex">
                 <button onClick={connect} className="dashboard">Dashboard</button>

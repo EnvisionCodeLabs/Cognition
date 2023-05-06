@@ -180,10 +180,14 @@ export default function Landing(){
                 <div class="grid-2 mt-20">
                     
                     <div class="mt-36">
-                        <h2 class="sub-text-header text-4xl font-bolder text-[#fff] section-part-four">Work like you never did before</h2>
-                        <p class="text-white mt-2 section-part-four">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate aliquid officia ipsum rerum expedita facere harum? Unde modi quaerat temporibus provident quod quia beatae iste dolorum voluptas, cumque ratione ducimus!</p>
-                        <h2 class="sub-text-header text-4xl font-bolder text-[#fff] mt-20 section-part-four">Work like you never did before</h2>
-                        <p class="text-white mt-2 section-part-four">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate aliquid officia ipsum rerum expedita facere harum? Unde modi quaerat temporibus provident quod quia beatae iste dolorum voluptas, cumque ratione ducimus!</p>
+                        <h2 class="sub-text-header text-4xl font-bolder text-[#fff] section-part-four"> Innovation and Creativity</h2>
+                        <p class="text-white mt-2 section-part-four text-xl">
+                            Incentivize innovation and creativity, ultimately leads to the development of new technologies, products, and services that can benefit people.
+                        </p>
+                        <h2 class="sub-text-header text-4xl font-bolder text-[#fff] mt-20 section-part-four">Economic Growth</h2>
+                        <p class="text-white mt-2 section-part-four text-xl">
+                            Support economic growth by promoting the development of new industries and business models, leads to the creation of new jobs and opportunities for people around the world.
+                            </p>
                     </div>
                     <div className="svdcsd">
                         <object data="/lib/earth.svg" type="image/svg+xml">

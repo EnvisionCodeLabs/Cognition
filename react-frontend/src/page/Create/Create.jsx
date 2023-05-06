@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react'
+import './create.css'
 import LoginHead from "../../components/LoginHeader"
 import {useDropzone} from 'react-dropzone';
 import { useNavigate } from "react-router-dom";
 import { Web3Storage } from 'web3.storage'
 import Web3 from 'web3/dist/web3.min.js'
 import { imageStorageToken, imageStorageAbi } from '../../contracts/imageStorage';
+import Swal from 'sweetalert2'
 
 const thumbsContainer = {
   display: 'flex',
@@ -45,6 +47,7 @@ function Create() {
 
     const navigator = useNavigate()
     const [file, setFile] = useState(null)
+    const [showimg, setShowImg] = useState(null)
 
     const [accounts, setAccounts] = useState(null);
 
@@ -76,8 +79,24 @@ function Create() {
                 from: accounts,
                 gas,
             });
-
+            Swal.fire({
+              icon: 'success',
+              title: 'The file has been sucessfully uploaded',
+              showConfirmButton: false,
+              
+            })
             console.log(encodeURI(e.target.name))
+        }
+
+        else{
+          Swal.fire({
+            icon: 'error',
+            title: 'We have detected that the image has already been deployed!',
+            showConfirmButton: true,
+            showCancelButton: true,
+              confirmButtonText:
+    '<i class="fa fa-thumbs-up"></i> Schedule Voting!'
+          })
         }
 
     }
@@ -85,17 +104,19 @@ function Create() {
 
     function handleUpload(e){
         setFile(e.target.files)
+        setShowImg(URL.createObjectURL(e.target.files[0]))
         console.log(e.target.files[0])
     }
   
 
 
   return (
-    <section>
+    <section className='hero__container'>
       { accounts && <LoginHead account={accounts} />}
+      <img src={showimg} className='show-img-detail'/>
       <form onSubmit={e => submit(e)}>
-            <input type="file" onChange={e => handleUpload(e)}/>
-            <button type='submit'>Submit</button>
+            <input type="file" onChange={handleUpload}/>
+            <button type='submit' className='mt-5 submit-btn'>Submit</button>
       </form>
     </section>
   )

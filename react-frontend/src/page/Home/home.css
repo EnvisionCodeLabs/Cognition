@@ -242,6 +242,13 @@ footer {
   object-fit: cover;
 }
 
+.logo-img-cog-v2{
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  margin-top: -20px;
+}
+
 .dashboard{
   font-size: 20px;
 }

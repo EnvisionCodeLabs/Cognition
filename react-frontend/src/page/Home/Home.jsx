@@ -49,7 +49,7 @@ export default function Home(){
     return <div class="media-body">
     { accounts && <LoginHead account={accounts}/> }
     <section class="hero__container">
-        <section class="flex">
+        <section class="flex gap-5">
             <div class="side-container pt-5">
                 <div class="px-6 pt-8 flex gap-2">
                     <i class="fa-solid fa-house text-[#273339] text-xl"></i>
@@ -103,6 +103,21 @@ export default function Home(){
             </div>
             <div>
                 
+            </div>
+            <div className="vote">
+                <div className="vote-section">
+                    <div className="sds">
+                    <h2 className="text-center font-bold text-xl text-[#273339] py-5">Vote</h2>
+                        <div className="el-sds-1 gap-5 py-2">
+                            <img src="" alt="" />
+                            <div>
+                                <h2 className="mt-2 text-lg font-bold text-[#273339]">Vote for Sam vs Ram</h2>
+                            </div>
+                            <button className="vote-btn">Vote!</button>
+                        </div>
+                    
+                    </div>
+                </div>
             </div>
         </section>
         </section>

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Montserrat:wght@900&display=swap");
 ::-moz-selection {
   color: white;
@@ -50,7 +50,7 @@ body {
 }
 
 .text-header {
-  font-size: 70px;
+  font-size: 78px;
   font-weight: 800;
   font-family: "Montserrat", sans-serif;
 }
@@ -164,7 +164,7 @@ input {
 }
 
 .side-container {
-  width: 30%;
+  width: 15%;
   border-right: 1px solid #ccc;
 }
 
@@ -175,9 +175,10 @@ input {
 }
 
 .profile-img-nav {
-  width: 30px;
-  height: 30px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
+  margin-top: -25px;
 }
 
 .b2_fZ {
@@ -188,17 +189,12 @@ input {
 
 footer {
   width: 100%;
-  height: 390px;
+  height: 300px;
   background: #343434;
 }
 
 .footer-vone {
   width: 30%;
-}
-
-.sasdcxxz{
-  /* background-color: #000; */
-  width: 100%;
 }
 
 .signup-btn {
@@ -236,8 +232,54 @@ footer {
      object-fit: cover;
 }
 
-.get-start-here-img{
-  width: 300px;
-  margin: 0 auto;
-  margin-top: 120px;
+.cursor-pointer{
+    cursor: pointer;
 }
+
+.logo-img-cog{
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+}
+
+.logo-img-cog-v2{
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  margin-top: -20px;
+}
+
+.dashboard{
+  font-size: 20px;
+}
+
+.footer-img{
+  width: 120px;
+  height: 120px;
+}
+
+.vote-section{
+  width: 20%;
+  border-left: 1px solid #ccc;
+}
+
+.sds{
+  width: 300px;
+  height: 600px;
+  border-radius: 10px;
+  margin-top: 10px;
+  background-color: #e3e3e3;
+}
+
+.el-sds-1{
+  display: flex;
+  background: #ccc;
+}
+
+.vote-btn{
+  background: #47baef;
+  padding: 10px;
+  color: white;
+  font-weight: 800;
+  border-radius: 10px;
+} */

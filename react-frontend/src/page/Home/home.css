@@ -164,7 +164,7 @@ input {
 }
 
 .side-container {
-  width: 30%;
+  width: 15%;
   border-right: 1px solid #ccc;
 }
 
@@ -256,4 +256,30 @@ footer {
 .footer-img{
   width: 120px;
   height: 120px;
+}
+
+.vote-section{
+  width: 20%;
+  border-left: 1px solid #ccc;
+}
+
+.sds{
+  width: 300px;
+  height: 600px;
+  border-radius: 10px;
+  margin-top: 10px;
+  background-color: #e3e3e3;
+}
+
+.el-sds-1{
+  display: flex;
+  background: #ccc;
+}
+
+.vote-btn{
+  background: #47baef;
+  padding: 10px;
+  color: white;
+  font-weight: 800;
+  border-radius: 10px;
 }

@@ -44,7 +44,10 @@ async def compare_image(file: UploadFile = File(...)) -> JSONResponse:
     ret = client.query.get("Images", ['image']).with_near_image({
         'image': image_path
     }).with_limit(3)
+
     res = ret.do()
+
+
     return JSONResponse(content=res)
 
 

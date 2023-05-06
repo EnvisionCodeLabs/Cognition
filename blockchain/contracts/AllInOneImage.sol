@@ -23,6 +23,10 @@ contract AllInOneImage{
         string fileName
     );
 
+    event Voted(
+        address giver
+    );
+
     mapping(uint => Image) public images;
 
     uint public currentCount;
@@ -43,6 +47,13 @@ contract AllInOneImage{
 
         currentCount++;
 
+    }
+
+
+    function increaseYesCount(uint _id) public payable {
+        images[_id].yesCount++;
+
+        emit Voted(msg.sender);
     }
 
 

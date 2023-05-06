@@ -74,9 +74,11 @@ function Create() {
 
           let data = new FormData();
           let headers = {
-            'Content-Type': 'multipart/form-data'
+            headers: {
+              'Content-Type': 'multipart/form-data'
+            }
           }
-          data.append('data', file)
+          data.append('data', file[0])
 
             let resp = await axios.post("http://127.0.0.1:8000/compare", data, headers)
 

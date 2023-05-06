@@ -1,8 +1,9 @@
 import weaviate
-from fastapi import FastAPI, File, UploadFile
+from fastapi import FastAPI, File, UploadFile, Form
 import base64
 from fastapi.responses import JSONResponse
 import tempfile
+from fastapi.middleware.cors import CORSMiddleware
 
 
 client = weaviate.Client("http://127.0.0.1:8080")
@@ -12,6 +13,20 @@ client = weaviate.Client("http://127.0.0.1:8080")
 # print(res)
 
 app = FastAPI()
+
+origins = [
+    "http://localhost:5173",
+    "http://localhost:8080",
+    "http://127.0.0.1:5173"
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.get('/info')
 def info():

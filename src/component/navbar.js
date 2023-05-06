@@ -5,10 +5,10 @@ class NoLoginHeader extends HTMLElement {
         <div class="hero__container">
         <header class="header">
             <div>
-                <p>Cognition</p>
+                <p><img src="../lib/cogAI.png" class="org-img"/></p>
             </div>
             <ul class="flex">
-                <li><a href="./login.html">Dashboard</a></li>
+                <li><a href="./login.html" class="mt-5">Dashboard</a></li>
             </ul>
         </header>
         </div>

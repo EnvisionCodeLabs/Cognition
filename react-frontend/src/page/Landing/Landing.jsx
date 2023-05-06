@@ -125,7 +125,7 @@ export default function Landing(){
                         </p>
                     </div>
                 </div>
-                <div className="mt-20">
+                <div className="mt-36">
                     <h1 class="sub-text-header text-6xl font-bolder section-part-two">
                         Legal Framework
                     </h1>

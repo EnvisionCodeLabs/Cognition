@@ -10,8 +10,8 @@ contract ImageStorage {
 
     event ImageAdded(string ipfsId);
 
-    function addImage(string memory ipfsId) public payable {
-        Image newImage = new Image(ipfsId);
+    function addImage(string memory ipfsId, string memory fileName) public payable {
+        Image newImage = new Image(ipfsId, fileName);
         images.push(newImage);
         emit ImageAdded(ipfsId);
     }

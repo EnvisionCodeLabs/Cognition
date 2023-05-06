@@ -71,11 +71,13 @@ function Create() {
             const web3 = new Web3(Web3.givenProvider)
 
             const contract = new web3.eth.Contract(imageStorageAbi, imageStorageToken);
-            const gas = await contract.methods.addImage(await res).estimateGas({ from: accounts });
-            await contract.methods.addImage(await res).send({
+            const gas = await contract.methods.addImage(await res, encodeURI(file.name)).estimateGas({ from: accounts });
+            await contract.methods.addImage(await res, file.name).send({
                 from: accounts,
                 gas,
             });
+
+            console.log(encodeURI(e.target.name))
         }
 
     }

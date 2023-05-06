@@ -3,11 +3,13 @@ pragma solidity ^0.8.0;
 
 contract Image {
     string public ipfsId;
+    string public fileName;
     address[] public acceptedAddresses;
     address[] public rejectedAddresses;
 
-    constructor(string memory _ipfsId) {
+    constructor(string memory _ipfsId, string memory _fileName) {
         ipfsId = _ipfsId;
+        fileName = _fileName;
     }
 
     function addToAccepted(address newAddress) public payable{

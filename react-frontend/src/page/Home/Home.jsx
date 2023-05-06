@@ -28,8 +28,12 @@ export default function Home(){
                 const images = await contract.methods.getImages().call()
 
                 for (const image of await images){
-                    let imageContract = await new web3.eth.Contract(imageAbi, image).methods.ipfsId().call()
-                    await setPosts([...posts, imageContract])
+                    let imageContract = new web3.eth.Contract(imageAbi, image)
+                    let ipfs = await imageContract.methods.ipfsId().call()
+                    let name = await imageContract.methods.fileName().call()
+
+                    console.log(name)
+                    await setPosts([...posts, { ipfs : ipfs, name: name}])
 
                 }
 
@@ -83,7 +87,7 @@ export default function Home(){
                                     <h2 class="font-bolder text-[#273339] text-lg">Helloworld</h2>
                                     <p>sht</p>
                                     <div class="mt-5">
-                                        <img src={ 'https://' +  element + ".ipfs.dweb.link"} alt="" class="post-image"/>
+                                        <img src={ 'https://' +  element.ipfs + ".ipfs.dweb.link/" + element.name} alt="" class="post-image"/>
                                     </div>
                                 </div>
                             </div>

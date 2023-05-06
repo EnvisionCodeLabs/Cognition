@@ -229,4 +229,10 @@ footer {
   border-radius: 50%;
   -o-object-fit: cover;
      object-fit: cover;
-}/*# sourceMappingURL=style.css.map */
+}
+
+.get-start-here-img{
+  width: 300px;
+  margin: 0 auto;
+  margin-top: 120px;
+}

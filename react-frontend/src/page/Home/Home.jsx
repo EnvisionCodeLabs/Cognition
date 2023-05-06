@@ -25,9 +25,13 @@ export default function Home(){
 
                 const contract = new web3.eth.Contract(allImageAbi, ITA);
 
-                const images = await contract.methods.currentCount().call()
+                const imagesCount = await contract.methods.currentCount().call()
 
                 
+                setPosts([])
+                for (let i = 0; i < imagesCount; i++){
+                    setPosts([...posts, await contract.methods.images(i).call()])
+                }
 
                 console.log(posts)
 
@@ -66,17 +70,16 @@ export default function Home(){
                 <div class="border-line mt-2"></div>
                 <section class="main-vsd">
                    {
-                        posts.map(element => {
+                        posts.map(post => {
 
                             return <div class="border px-6 py-10">
                         <div class="work-flex">
                             <div class="flex gap-5 post-site">
-                                <img src="" alt="" class="profile"/>
+                                <img src={"https://robohash.org/" + accounts} alt="" class="profile"/>
                                 <div>
-                                    <h2 class="font-bolder text-[#273339] text-lg">Helloworld</h2>
-                                    <p>sht</p>
+                                    <h2 class="font-bolder text-[#273339] text-lg">{post[2].substr(0, 7)}</h2>
                                     <div class="mt-5">
-                                        <img src={ 'https://' +  element.ipfs + ".ipfs.dweb.link/" + element.name} alt="" class="post-image"/>
+                                        <img src={ 'https://' +  post[0] + ".ipfs.dweb.link/" + encodeURI(post[1])} alt="" class="post-image"/>
                                     </div>
                                 </div>
                             </div>

@@ -50,7 +50,7 @@ body {
 }
 
 .text-header {
-  font-size: 70px;
+  font-size: 78px;
   font-weight: 800;
   font-family: "Montserrat", sans-serif;
 }
@@ -230,8 +230,23 @@ footer {
   border-radius: 50%;
   -o-object-fit: cover;
      object-fit: cover;
-}/*# sourceMappingURL=style.css.map */
+}
 
 .cursor-pointer{
     cursor: pointer;
+}
+
+.logo-img-cog{
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+}
+
+.dashboard{
+  font-size: 20px;
+}
+
+.footer-img{
+  width: 120px;
+  height: 120px;
 }

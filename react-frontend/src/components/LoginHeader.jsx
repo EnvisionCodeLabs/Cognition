@@ -5,7 +5,7 @@ export default function LoginHead({account}){
     return  <nav class="navv2 hero__container">
         <header class="header">
             <div>
-                <p>Cognition</p>
+                <img src="../lib/cogAI.png" alt="" />
             </div>
              <ul class="flex gap-20">
                 <li><a href="./login.html"><i class="fa-solid fa-house text-xl"></i></a></li>

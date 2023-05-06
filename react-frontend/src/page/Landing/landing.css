@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Montserrat:wght@900&display=swap");
 ::-moz-selection {
   color: white;
   background: #343a40;
@@ -15,9 +16,27 @@ body {
   padding: 0;
 }
 
-nav {
+.media-body {
+  overflow-y: hidden;
+}
+
+.nav {
   width: 100%;
   padding-top: 40px;
+  background: linear-gradient(to right, #000, #343434);
+  color: #fff;
+  font-weight: 900;
+}
+
+.navv2 {
+  width: 100%;
+  padding-top: 40px;
+  font-weight: 900;
+}
+
+.main-vsd {
+  height: 100vh;
+  overflow: auto;
 }
 
 .header {
@@ -25,10 +44,15 @@ nav {
   justify-content: space-between;
 }
 
+.work-flex {
+  display: flex;
+  justify-content: space-between;
+}
+
 .text-header {
-  font-size: 64px;
+  font-size: 70px;
   font-weight: 800;
-  font-family: "Bruno Ace SC", cursive;
+  font-family: "Montserrat", sans-serif;
 }
 
 .flex {
@@ -57,15 +81,29 @@ ul {
   background: linear-gradient(to right, #000, #343434);
 }
 
+.odd-background-v2 {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, #000, #343434);
+}
+
+.m-hd {
+  font-size: 26px;
+  font-weight: 700;
+  margin-top: 30px;
+}
+
+.text {
+  font-size: 18px;
+}
+
 .font-bolder {
   font-weight: 900;
 }
 
-.sub-text-header {
-  color: #273339;
-}
-
 .svg-sec {
+  position: relative;
+  top: -90px;
   height: 100%;
 }
 
@@ -134,4 +172,61 @@ input {
   width: 80px;
   height: 40px;
   border-radius: 50%;
+}
+
+.profile-img-nav {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.b2_fZ {
+  width: 100%;
+  height: 250px;
+  margin-top: 30px;
+}
+
+footer {
+  width: 100%;
+  height: 300px;
+  background: #343434;
+}
+
+.footer-vone {
+  width: 30%;
+}
+
+.signup-btn {
+  background: #47baef;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.profile-bac {
+  width: 100%;
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.profile-bac img {
+  width: 100%;
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  opacity: 0.6;
+}
+
+.profile-mn {
+  width: 50%;
+  align-items: center;
+}
+.profile-mn img {
+  position: relative;
+  top: -50px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }/*# sourceMappingURL=style.css.map */

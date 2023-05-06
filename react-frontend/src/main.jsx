@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import Landing from './page/Landing/Landing';
 import Home from './page/Home/Home';
+import Create from './page/Create/Create';
 
 
 
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
   {
     path: '/home',
     element: <Home/>
+  },
+  {
+    path: '/create',
+    element: <Create/>
   }
 ]);
 

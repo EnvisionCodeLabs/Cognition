@@ -175,9 +175,10 @@ input {
 }
 
 .profile-img-nav {
-  width: 30px;
-  height: 30px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
+  margin-top: -25px;
 }
 
 .b2_fZ {
@@ -230,3 +231,7 @@ footer {
   -o-object-fit: cover;
      object-fit: cover;
 }/*# sourceMappingURL=style.css.map */
+
+.cursor-pointer{
+    cursor: pointer;
+}

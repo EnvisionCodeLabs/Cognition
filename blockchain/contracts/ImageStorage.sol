@@ -8,9 +8,12 @@ import "./Image.sol";
 contract ImageStorage {
     Image[] public images;
 
-    function addImage(string memory ipfsId) public {
+    event ImageAdded(string ipfsId);
+
+    function addImage(string memory ipfsId) public payable {
         Image newImage = new Image(ipfsId);
         images.push(newImage);
+        emit ImageAdded(ipfsId);
     }
 
     function getImages() public view returns (Image[] memory) {

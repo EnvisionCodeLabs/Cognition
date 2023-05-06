@@ -10,7 +10,7 @@ contract Image {
         ipfsId = _ipfsId;
     }
 
-    function addToAccepted(address newAddress) public {
+    function addToAccepted(address newAddress) public payable{
         require(!isAccepted(newAddress), "You have already voted");
 
         
@@ -21,7 +21,7 @@ contract Image {
         acceptedAddresses.push(newAddress);
     }
 
-    function addToRejected(address newAddress) public {
+    function addToRejected(address newAddress) public payable{
         require(!isRejected(newAddress), "You have already voted");
       
         if (isAccepted(newAddress)) {

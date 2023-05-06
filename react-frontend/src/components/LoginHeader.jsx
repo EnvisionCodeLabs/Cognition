@@ -1,4 +1,7 @@
+import { Link } from "react-router-dom"
+
 export default function LoginHead({account}){
+
 
     console.log(account)
 
@@ -8,9 +11,9 @@ export default function LoginHead({account}){
                 <img src="../lib/tabicon.png" className="logo-img-cog-v2" alt="" />
             </div>
              <ul class="flex gap-20">
-                <li><a href="./login.html"><i class="fa-solid fa-house text-xl"></i></a></li>
-                <li><a href="./register.html"><i class="fa-solid fa-hashtag text-xl"></i></a></li>
-                <li><a href="./register.html"><i class="fa-solid fa-pen text-xl"></i></a></li>
+                <li><Link to="/home"><i class="fa-solid fa-house text-xl"></i></Link></li>
+                <li><Link to="/home"><i class="fa-solid fa-hashtag text-xl"></i></Link></li>
+                <li><Link to="/create"><i class="fa-solid fa-pen text-xl"></i></Link></li>
                 {/* <li><a href="./register.html"><i class="fa-solid fa-user text-xl"></i></a></li> */}
             </ul>
             <div class="flex gap-5">

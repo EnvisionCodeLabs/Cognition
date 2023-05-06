@@ -7,6 +7,7 @@ import { Web3Storage } from 'web3.storage'
 import Web3 from 'web3/dist/web3.min.js'
 import { imageTokenAddress, allImageAbi } from '../../contracts/allInOneImage';
 import Swal from 'sweetalert2'
+import axios from "axios"
 
 const thumbsContainer = {
   display: 'flex',
@@ -68,7 +69,19 @@ function Create() {
     const submit =async  (e) => {
         e.preventDefault()
 
+
         if (file && client && accounts){
+
+          let data = new FormData();
+          let headers = {
+            'Content-Type': 'multipart/form-data'
+          }
+          data.append('data', file)
+
+            let resp = await axios.post("http://127.0.0.1:8000/compare", data, headers)
+
+            console.log(resp)
+            return
             const res = await client.put(file)
             
             const web3 = new Web3(Web3.givenProvider)

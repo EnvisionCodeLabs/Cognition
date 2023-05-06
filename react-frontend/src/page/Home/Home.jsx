@@ -27,9 +27,8 @@ export default function Home(){
 
                 const imagesCount = await contract.methods.currentCount().call()
 
-                
-                setPosts([])
                 for (let i = 0; i < imagesCount; i++){
+                    console.log(await contract.methods.images(i).call())
                     setPosts([...posts, await contract.methods.images(i).call()])
                 }
 
@@ -68,7 +67,7 @@ export default function Home(){
             <div class="mt-8">
                 <h2 class="font-bold text-3xl pl-5">Home</h2>
                 <div class="border-line mt-2"></div>
-                <section class="main-vsd">
+                <section class="mainlogin.html-vsd">
                    {
                         posts.map(post => {
 

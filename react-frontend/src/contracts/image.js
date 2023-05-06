@@ -1,4 +1,4 @@
 import abi from "../abi/Image.json"
 
-export const imageTokenAddress = "0xc892D7e861d9735fcF3CA2e5C571318d3034402E"
+export const imageTokenAddress = "0x8125b9e6713Ea5199F22f54cf674C26785652137"
 export const imageAbi = abi.abi

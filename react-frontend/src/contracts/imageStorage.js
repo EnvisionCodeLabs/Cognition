@@ -1,4 +1,4 @@
 import abi from "../abi/ImageStorage.json"
 
-export const imageStorageToken = "0xdfD28db086922220C21f1D1Ab2BbE58Ddaf29fc9"
+export const imageStorageToken = "0x15e7EFC25AfdB3383264B5d7d83b6470031322bE"
 export const imageStorageAbi = abi.abi

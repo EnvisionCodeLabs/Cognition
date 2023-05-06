@@ -9,6 +9,7 @@ import {
 import Landing from './page/Landing/Landing';
 import Home from './page/Home/Home';
 import Create from './page/Create/Create';
+import PostDetail from './page/PostDetail/PostDetail';
 
 
 
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
   {
     path: '/create',
     element: <Create/>
+  },
+  {
+    path: '/post/id',
+    element: <PostDetail/>
   }
 ]);
 

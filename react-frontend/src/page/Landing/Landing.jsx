@@ -206,12 +206,19 @@ export default function Landing(){
             </section>
 
         <footer >
-            <div class="hero__container">
-                <div class="work-flex mt-20">
+            <div class="hero__container sasd">
+                <div class="work-flex mt-20 sasdcxxz">
                     <div class=" footer-vone">
                         <h1 class="text-[#fff] font-bolder text-4xl">Lets keep in touch</h1>
                         {/* <img src="../lib/cogAI.png" alt="" className="footer-img" /> */}
                         <p class="text-[#fff] mt-2 font-semibold text-sm">a platform to verify ownership,enforce usage rights and monitor distribution of content</p>
+                        <div className="social-media mt-5">
+                            <h2 className="text-white font-bolder text-3xl">Connect with us</h2>
+                            <div className="flex gap-5">
+                            <i class="fa-brands fa-twitter text-xl text-white"></i>                       
+                            <i class="fa-brands fa-linkedin text-xl text-white" ></i>                       
+                            </div>
+                             </div>
                     </div>
                     <div>
                         <h1 class="text-[#fff] font-bold text-2xl text-right">Social</h1>

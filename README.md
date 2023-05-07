@@ -1,6 +1,7 @@
 # Cognition for Blockchain Copyright Protection
 # ![tabicon](./tabicon.png)
 ## Description
+Video - https://youtu.be/i5eOtG_xDcU
 Cognitive AI is a machine learning tool designed for blockchain technology to protect copyrights. The motivation behind this project is to prevent unauthorized use and distribution of copyrighted materials in the digital world. By leveraging blockchain's immutable and decentralized nature, Cognitive AI aims to enforce copyright ownership and usage rights more effectively.
 
 - What was your motivation? To prevent unauthorized use and distribution of copyrighted materials.

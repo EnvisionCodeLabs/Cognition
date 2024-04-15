@@ -15,7 +15,9 @@ Cognitive AI is a machine learning tool designed for blockchain technology to pr
 - [License](#license)
 
 ## Installation
-To get started with Cognitive AI, follow these steps:
+Before getting stated make sure you have metamask , or anyforms of wallet installed in your system.
+
+To get started with Cogition project , follow these steps:
 
 1. Clone the repository:
 ```
@@ -29,7 +31,7 @@ npm install
 ```
 3. Start the development environment:
 ```
-npm start
+npm run dev 
 ```
 
 ## Usage
